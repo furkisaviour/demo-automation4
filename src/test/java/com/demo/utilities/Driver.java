@@ -24,6 +24,13 @@ public class Driver {
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
+                case "chrome-headless":
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless");
+                    driver=new ChromeDriver(options);
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
                 case "firefox":
                     driver=new FirefoxDriver();
                     driver.manage().window().maximize();
