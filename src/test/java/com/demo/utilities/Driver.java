@@ -27,6 +27,8 @@ public class Driver {
                 case "chrome-headless":
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--disable-dev-shm-usage");
                     driver=new ChromeDriver(options);
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
