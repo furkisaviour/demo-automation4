@@ -35,6 +35,12 @@ public class Driver {
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
+                case "firefox-headless":
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--headless");
+                    driver=new FirefoxDriver(firefoxOptions);
+                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    break;
             }
         }
         return driver;
